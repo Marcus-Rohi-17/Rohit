@@ -14,7 +14,10 @@
     box-sizing: border-box;
 }
 /* Typography */
-
+::selection {
+    background: var(--color-primary);
+    color: #fff;
+}
 html{
     /* 62.5% of 16px = 10px*/
     font-size: 62.5%;
@@ -40,6 +43,7 @@ h2{
 h3{
     font-size: 3rem;
     margin-bottom: 1rem;
+    font-weight: 500;
 }
 p{
     margin-top: 0;
@@ -116,7 +120,6 @@ a{
 .list{
     list-style: none;
     padding-left: 0;
-    color: var(--color-headings);
 }
 .list--inline .list__item{
     display: inline-block;
@@ -125,6 +128,7 @@ a{
 .list--tick{
     list-style-image: url(../images/tick.svg);
     padding-left: 3rem;
+    color: var(--color-headings);
 }
 .list--tick .list__item{
     padding-left: 0.5rem;
@@ -361,6 +365,7 @@ a{
 /* Media */
 .media{
     display: flex;
+    margin-bottom: 4rem;
 }
 .media__title{
     margin-top: 0;
@@ -522,7 +527,7 @@ height:100vh takes the entire vertical space for the content  */
 .block{
     --padding-vertical: 6rem;
     padding: var(--padding-vertical) 2rem;
-    text-align: center;
+    /* text-align: center; */
 }
 .block__header{
     text-align: center;
@@ -537,13 +542,19 @@ height:100vh takes the entire vertical space for the content  */
 .block--dark .block__heading{
     color: #fff;
 }
+.block--dark h1,
+.block--dark h2,
+.block--dark h3 {
+    color: #fff;
+}
+
 .block--skewed-right{
     padding-bottom: calc(var(--padding-vertical) + 4rem);
-    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 80%);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 90%);
 }
 .block--skewed-left{
     padding-bottom: calc(var(--padding-vertical) + 4rem);
-    clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 100%);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
 }
 
 .container{
@@ -606,9 +617,7 @@ height:100vh takes the entire vertical space for the content  */
 }
 
 /* Hero */
-.hero{
-    clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
-}
+
 .hero__tagline{
     font-size:2rem;
     color: #b9c3cf;
@@ -677,9 +686,25 @@ height:100vh takes the entire vertical space for the content  */
 .feature_image {
     width: 100%;
 }
- 
+
 @media screen and (min-width:768px) {
     .feature:nth-of-type(even) .feature__content {
         order: 2;
+    }
+}
+/* Showcase Block */
+.block-showcase__image > img {
+    width: 100%;
+}
+@media screen and (min-width:768px) {
+    .block-showcase .grid {
+        grid-template-columns: 50% 50%;
+    }
+    .block-showcase__image {
+        justify-self: end;
+    }
+    .block-showcase__image > img {
+        width: auto;
+        max-width: 700px;
     }
 }
