@@ -563,6 +563,7 @@ height:100vh takes the entire vertical space for the content  */
     max-width: 1140px;
     /* 0 for vertical margin auto for horizontal margin */
     margin: 0 auto;
+    padding-bottom: 15rem;
 }
 
 /* Navigation Bar */
@@ -715,6 +716,7 @@ height:100vh takes the entire vertical space for the content  */
 /* Footer */
 .footer {
     background: #232323;
+    /* position: relative; */
 }
 .footer a {
     color: #777;
@@ -772,5 +774,26 @@ height:100vh takes the entire vertical space for the content  */
     }
     .footer__heading {
         font-size: 1.6rem;
+    }
+}
+
+@media screen and (min-width:768px) {
+    .footer__callout {
+        padding-top: 20rem;
+        position: relative;
+    }
+    .callout__modified {
+        padding: 0;
+        width: 100%;
+        position: absolute;
+        top: -15rem;
+    }
+}
+@media screen and (min-width:1024px){
+    .footer__callout{
+        padding-top: 15rem;
+    }
+    .callout__modified{
+        padding: 0 10rem;
     }
 }
